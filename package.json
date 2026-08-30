@@ -1,0 +1,19 @@
+{
+  "name": "afterhour-eka",
+  "version": "1.0.0",
+  "description": "\"# afteroffice-qa-ekanaradhipa\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekanaradhipa/afteroffice-qa-ekanaradhipa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ekanaradhipa/afteroffice-qa-ekanaradhipa/issues"
+  },
+  "homepage": "https://github.com/ekanaradhipa/afteroffice-qa-ekanaradhipa#readme"
+}
