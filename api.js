@@ -22,6 +22,7 @@ describe('API Testing', () => {
             password: 'password123'
         });
          console.log(response.body);
+         expect(response.statusCode).to.equal(200);
          expect(response.body).to.not.be.null;
          expect(response.body).to.have.property('token');
          token = response.body.token;
@@ -47,6 +48,7 @@ describe('API Testing', () => {
 
         let response = await request(urlGetBooking + newBookingId).get('/').set(header)
          console.log(response.body);
+         expect(response.statusCode).to.equal(200);
          expect(response.body).to.not.be.null;
 
          expect(response.body.firstname).to.equal(bookingData.firstname);
@@ -74,15 +76,28 @@ describe('API Testing', () => {
         let response = await request(urlGetBooking + newBookingId).delete('/').set(deleteheader)
           .timeout({ response: 10000, deadline: 15000 });
          console.log(response.body);
+         expect(response.statusCode).to.equal(201);
          expect(response.body).to.not.be.null;
-
-        let responseDeleted = await request(urlGetBooking + newBookingId).get('/').set(header)
-         console.log(responseDeleted.body);
-         expect(responseDeleted.body).to.not.have.property('firstname');
 
       })  
   
     });
+
+    context('get booking deleted', () => {
+      it('success', async () => {
+
+        let response = await request(urlGetBooking + newBookingId).get('/').set(header)
+         console.log(response.body);
+         expect(response.statusCode).to.equal(404);
+         expect(response.body).to.not.be.null;
+
+         expect(response.body).to.deep.equal({});
+
+      })  
+  
+    });
+
+    
 
     
 });
