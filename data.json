@@ -1,0 +1,11 @@
+{
+             "firstname" : "Budi",
+    "lastname" : "Bambang",
+    "totalprice" : 111,
+    "depositpaid" : true,
+    "bookingdates" : {
+        "checkin" : "2027-01-01",
+        "checkout" : "2027-01-02"
+    },
+    "additionalneeds" : "Breakfast"
+        }

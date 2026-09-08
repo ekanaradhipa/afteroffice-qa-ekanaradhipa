@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "\"# afteroffice-qa-ekanaradhipa\"",
   "main": "index.js",
+  "dependencies": {
+    "chai": "^6.2.2",
+    "cypress": "^16.0.0",
+    "dotenv": "^17.4.2",
+    "mocha": "^11.8.0",
+    "supertest": "^7.2.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
