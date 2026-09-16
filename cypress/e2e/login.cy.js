@@ -18,6 +18,25 @@ describe('OrangeHRM admin login', () => {
     });
   });
 
+  it('logs in successfully as an employee', () => {
+    cy.fixture('login').then((credentials) => {
+      cy.visit('/web/index.php/auth/login');
+
+      cy.get('input[name="username"]')
+        .should('be.visible')
+        .type(credentials.username-employee);
+      cy.get('input[name="password"]')
+        .should('be.visible')
+        .type(credentials['username-employee-password'], { log: false });
+      cy.get('button[type="submit"]')
+        .should('be.enabled')
+        .click();
+
+      cy.url().should('include', 'web/index.php/dashboard/index');
+     // cy.get('h6').should('contain', 'Dashboard');
+    });
+  });
+
   it('logs in fails as an administrator', () => {
     cy.fixture('login').then((credentials) => {
       cy.visit('/web/index.php/auth/login');
